@@ -1,0 +1,77 @@
+" Joshua Zone
+
+" General {{{
+if &compatible
+  set nocompatible
+endif
+" }}}
+let g:lightline = {
+      \ 'colorscheme': 'Dracula',
+      \ }
+" Color {{{
+set t_Co=256                      " Set 256 colors
+syntax enable		                  " enable syntax processing
+set background=dark
+colorscheme dracula
+" }}}
+
+" Spaces & Tabs {{{
+set tabstop=2		                  " 2 space tab when opening
+set expandtab		                  " use spaces for tabs
+set softtabstop=2	                " # of spaces in tab when editing
+set shiftwidth=2                  " # of spaces in tab when in insert mode
+" }}}
+
+" UI Layout
+set number		                    " Show line numbers
+set relativenumber	              " Show relative numbers
+set showcmd		                   " Show command in bottom bar
+set cursorline	                  " Highlight current line
+set showmatch		                 " Highlight matching parenthesis
+filetype indent on                " Set filetype indentation detection
+filetype on                       " Set Plugins for netrw
+set wildmenu		                  " visual autocomplete for command menu
+set lazyredraw		                " redraw only when we need to
+set laststatus=2
+set noshowmode                    " turn off mode since it now shows in lightline
+" }}}
+
+" Searching {{{
+set ignorecase		                " ignore case when searching
+set incsearch		                  " search as characters are entered
+set hlsearch		                  " highligh all matches
+" }}}
+
+" Folding {{{
+set foldenable		                " enable folding
+set foldlevelstart=10	            " open most folds by default
+set foldnestmax=10	              " 10 nested fold max
+set foldmethod=indent	            " fold based on indent level
+" }}}
+
+" Finding Files {{{
+set path+=**                      " Search down into sub folders
+set wildignore+=*/node_modules/*  " Ignore node_modules
+" }}}
+
+" File Browsing {{{
+" let g:netrw_banner=0              " disable banner on netrw
+" let g:netrw_browse_split=4        " open in prior window
+let g:netrw_altv=1                  " open splits to the right
+" let g:netrw_liststyle=3           " tree view
+" }}}
+" Commands {{{
+command! MakeTags !ctags -R --exclude=node_modules .
+command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update()
+command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+" }}}
+" MINPAC {{{
+packadd minpac
+call minpac#init()
+call minpac#add('dracula/vim')
+call minpac#add('tpope/vim-surround')
+call minpac#add('sheerun/vim-polyglot')
+call minpac#add('itchyny/lightline.vim')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+" }}}
+
