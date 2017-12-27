@@ -1,23 +1,20 @@
 #/usr/bin/env bash
 
-usage="$(basename "$0") [-l] [-c] [-h] [-p] -- script to install dotfiles
+usage="$(basename "$0") [-l] [-h] [-p] -- script to install dotfiles
 
 where:
   -l  just symlink all folders in /link
-  -c  just copy all files and folders in /copy
   -h  show this help text
   -p  postinstall will run after everything else is done"
 
 #arg options
 DO_LINK=0;  # Run do_link
-DO_COPY=0;  # Run do_copy
 DO_POST=0;  # Run do_init
 
 #parse the options
-while getopts lchp OPT ; do
+while getopts lhp OPT ; do
   case $OPT in
     l) DO_LINK=1;;
-    c) DO_COPY=1;;
     p) DO_POST=1;;
     h)
       echo "${usage}"
@@ -47,10 +44,6 @@ echo "${CYAN} A whole new world..... (Installing DotFiles)${NC}"
 
 if [ ${DO_LINK} -eq 1 ]; then
   source ${DOTFILES}/setup/link.sh
-fi
-
-if [ ${DO_COPY} -eq 1 ]; then
-  source ${DOTFILES}/setup/copy.sh
 fi
 
 if [ ${DO_POST} -eq 1 ]; then
