@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# Symlink all the files in the link directory to the HOME directory and append .
-function do_link() {
+function do_config() {
   local base dest
-  local files=($DOTFILES/link/*)
+  local files=($DOTFILES/config/*)
 
   if (( ${#files[@]} == 0 )); then 
     echo "${RED}No Files Found.${NC}"
@@ -13,16 +12,16 @@ function do_link() {
   # Iterate over these files
   for file in "${files[@]}"; do
     base="$(basename $file)"
-    dest="$HOME/.$base"
+    dest="$HOME/.config"
 
-    if [ -d ${dest} ]; then
-      backup_dir ${dest}
+    if [ -d ${dest}/${base} ]; then
+      backup_dir ${dest}/${base}
     fi
 
+    mkdir ${dest}
     echo "${PURPLE}Linking ${base} to ${dest}${NC}"
-    ln -sf ${file} ${dest} 
+    ln -sf ${file} ${dest}/${base} 
   done
-
 }
 
-do_link
+do_config

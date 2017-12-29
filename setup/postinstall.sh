@@ -10,13 +10,13 @@ function do_postinstall() {
   local files=(${DOTFILES}/postinstall/*)
 
   if (( ${#files[@]} == 0 )); then
-    echo "${RED} No Files Found.${NC}"
+    echo "${RED}No Files Found.${NC}"
     return
   fi
 
   # Iterate over the files and source them
   for file in "${files[@]}"; do
-    echo "${PURPLE} sourcing ${file} ${NC}"
+    echo "${PURPLE}Sourcing ${file} ${NC}"
     source ${file}
   done
 
