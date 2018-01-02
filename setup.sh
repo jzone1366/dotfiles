@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/bin/bash
 
 usage="$(basename "$0") [-l] [-h] [-p] [-c] -- script to install dotfiles
 
@@ -20,20 +20,20 @@ while getopts lhpc OPT ; do
     p) DO_POST=1;;
     c) DO_CONFIG=1;;
     h)
-      echo "${usage}"
+      echo -e "${usage}"
       exit 1
       ;;
     \?) printf "Illegal options: -%s\n" "$OPTARG" >&2
-      echo "$usage" >&2
+      echo -e "$usage" >&2
       exit 1
       ;;
   esac
 done
 # Helper Functions
 function backup_dir() {
-  local dest=$HOME/backups/$(date "+%Y_%m_%d-%H_%M_%S")/
+  local dest=$HOME/backups/$(date "+%Y_%m_%d-%H_%M_%S")
   local base="$(basename $file)"
-  echo "${CYAN}backing up $1 to ${dest}${NC}"
+  echo -e "${CYAN}backing up $1 to ${dest}${NC}"
 
   mkdir -p ${dest}
   mv $1 ${dest}/${base}
@@ -51,7 +51,7 @@ NC='\033[0m';
 
 export DOTFILES=$HOME/.dotfiles
 
-echo "${CYAN}A whole new world..... (Installing DotFiles)${NC}"
+echo -e "${CYAN}A whole new world..... (Installing DotFiles)${NC}"
 
 if [ ${DO_LINK} -eq 1 ]; then
   source ${DOTFILES}/setup/link.sh
@@ -65,4 +65,4 @@ if [ ${DO_POST} -eq 1 ]; then
   source ${DOTFILES}/setup/postinstall.sh
 fi
 
-echo "${GREEN}DONE! Reload this thing to get it to work.${NC}"
+echo -e "${GREEN}DONE! Reload this thing to get it to work.${NC}"

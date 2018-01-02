@@ -5,7 +5,7 @@ function init_package_loader() {
   local ghUrl=https://github.com/k-takata/minpac.git
   local dest=${HOME}/.vim/pack/minpac/opt/minpac
 
-  echo "${CYAN}Cloning minpack into ${dest} ${NC}"
+  echo -e "${CYAN}Cloning minpack into ${dest} ${NC}"
   if [ -d ${dest} ]; then
     rm -rf ${dest}
   fi
@@ -18,5 +18,5 @@ function init_vim() {
   init_package_loader
 }
 
-echo "${CYAN}Initializing VIM${NC}"
+echo -e "${CYAN}Initializing VIM${NC}"
 init_vim

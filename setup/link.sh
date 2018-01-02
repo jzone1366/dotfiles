@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 # Symlink all the files in the link directory to the HOME directory and append .
 function do_link() {
@@ -6,7 +6,7 @@ function do_link() {
   local files=($DOTFILES/link/*)
 
   if (( ${#files[@]} == 0 )); then 
-    echo "${RED}No Files Found.${NC}"
+    echo -e "${RED}No Files Found.${NC}"
     return
   fi
 
@@ -19,7 +19,7 @@ function do_link() {
       backup_dir ${dest}
     fi
 
-    echo "${PURPLE}Linking ${base} to ${dest}${NC}"
+    echo -e "${PURPLE}Linking ${base} to ${dest}${NC}"
     ln -sf ${file} ${dest} 
   done
 

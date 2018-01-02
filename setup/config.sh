@@ -5,7 +5,7 @@ function do_config() {
   local files=($DOTFILES/config/*)
 
   if (( ${#files[@]} == 0 )); then 
-    echo "${RED}No Files Found.${NC}"
+    echo -e "${RED}No Files Found.${NC}"
     return
   fi
 
@@ -19,7 +19,7 @@ function do_config() {
     fi
 
     mkdir ${dest}
-    echo "${PURPLE}Linking ${base} to ${dest}${NC}"
+    echo -e "${PURPLE}Linking ${base} to ${dest}${NC}"
     ln -sf ${file} ${dest}/${base} 
   done
 }
