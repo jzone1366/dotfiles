@@ -12,10 +12,10 @@
 [plugins]
 [profiles]
   [[default]]
-    palette = "#121212:#fa2573:#98e123:#dfd460:#1080d0:#8700ff:#43a8d0:#bbbbbb:#555555:#f6669d:#b1e05f:#fff26d:#00afff:#af87ff:#51ceff:#ffffff"
-    background_color = "#121212"
+    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
+    background_color = "#1e1e1e"
     cursor_color = "#bbbbbb"
-    foreground_color = "#bbbbbb"
+    foreground_color = "#e6d4a3"
     background_image = None
     font = Hack Nerd Font 10
     use_system_font = False
@@ -31,4 +31,10 @@
     background_color = "#121212"
     cursor_color = "#bbbbbb"
     foreground_color = "#bbbbbb"
+    background_image = None
+  [[Gruvbox Dark]]
+    palette = "#161819:#f73028:#aab01e:#f7b125:#719586:#c77089:#7db669:#faefbb:#7f7061:#be0f17:#868715:#cc881a:#377375:#a04b73:#578e57:#e6d4a3"
+    background_color = "#1e1e1e"
+    cursor_color = "#bbbbbb"
+    foreground_color = "#e6d4a3"
     background_image = None
