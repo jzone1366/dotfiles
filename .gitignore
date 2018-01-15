@@ -1,3 +1,4 @@
 .netrwhist
 link/vim/pack/**/*
+link/zsh/cache/**/*
 *.swp
