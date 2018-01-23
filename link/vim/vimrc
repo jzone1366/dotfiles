@@ -1,11 +1,12 @@
 " Joshua Zone
 
+" Global {{{
 let g:gruvbox_contrast_dark = 'hard'
+" }}}
 
 " Color {{{
 set t_Co=256                      " Set 256 colors
 syntax enable		                  " enable syntax processing
-set background=dark
 colorscheme gruvbox
 " }}}
 
@@ -67,9 +68,11 @@ if exists('*minpac#init')
   call minpac#add('morhetz/gruvbox')
   call minpac#add('tpope/vim-surround')
   call minpac#add('sheerun/vim-polyglot')
-  "call minpac#add('itchyny/lightline.vim')
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
+  call minpac#add('leafgarland/typescript-vim', { 'for': 'typescript'})
+  call minpac#add('peitalin/vim-jsx-typescript', {'for': 'typescript.tsx'})
 endif
 " }}}
 
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
