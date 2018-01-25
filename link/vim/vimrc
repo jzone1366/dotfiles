@@ -1,15 +1,5 @@
 " Joshua Zone
 
-" Global {{{
-let g:gruvbox_contrast_dark = 'hard'
-" }}}
-
-" Color {{{
-set t_Co=256                      " Set 256 colors
-syntax enable		                  " enable syntax processing
-colorscheme gruvbox
-" }}}
-
 " Spaces & Tabs {{{
 set tabstop=2		                  " 2 space tab when opening
 set expandtab		                  " use spaces for tabs
@@ -70,9 +60,21 @@ if exists('*minpac#init')
   call minpac#add('sheerun/vim-polyglot')
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
-  call minpac#add('leafgarland/typescript-vim', { 'for': 'typescript'})
-  call minpac#add('peitalin/vim-jsx-typescript', {'for': 'typescript.tsx'})
+"  call minpac#add('leafgarland/typescript-vim', { 'for': 'typescript'})
+"  call minpac#add('peitalin/vim-jsx-typescript', {'for': 'typescript.tsx'})
 endif
 " }}}
 
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
+
+" Global {{{
+let g:gruvbox_contrast_dark = 'hard'
+" }}}
+
+" Color {{{
+set t_Co=256                      " Set 256 colors
+syntax enable		                  " enable syntax processing
+set background=dark
+colorscheme gruvbox
+" }}}
+
