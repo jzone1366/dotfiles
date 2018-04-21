@@ -14,6 +14,10 @@ export EDITOR='vim'
 
 export LC_COLLATE=C
 
+export GOPATH="${HOME}/Go"
+export PATH="${GOPATH}/bin:${PATH}"
+
+
 # Projects and stuff
 
 # NVM Stuff

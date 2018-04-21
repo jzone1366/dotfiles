@@ -10,3 +10,4 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
