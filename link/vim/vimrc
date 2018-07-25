@@ -49,25 +49,22 @@ if exists('*minpac#init')
   " minpac is loaded.
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
-  "call minpac#add('morhetz/gruvbox')
-  call minpac#add('tomasr/molokai')
+  "call minpac#add('arcticicestudio/nord-vim')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-sleuth')
   call minpac#add('sheerun/vim-polyglot')
-  call minpac#add('vim-airline/vim-airline')
-  call minpac#add('vim-airline/vim-airline-themes')
-  call minpac#add('fatih/vim-go', { 'do': ':GoInstallBinaries' })
+  call minpac#add('bluz71/vim-moonfly-colors')
+  call minpac#add('itchyny/lightline.vim')
+  "call minpac#add('fatih/vim-go', { 'do': ':GoInstallBinaries' })
 endif
 " }}}
 
 " Global {{{
-let g:airline_theme='tomorrow'
 let g:rehash256 = 1
+let g:lightline = { 'colorscheme': 'moonfly' }
 " }}}
 
 " Color {{{
 syntax enable		          " enable syntax processing
-"colorscheme gruvbox
-"colorscheme molokai
-colorscheme tomorrowNightBright
+colorscheme moonfly
 " }}}
