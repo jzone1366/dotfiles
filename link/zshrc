@@ -10,4 +10,19 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/zsh_hooks.zsh
 
+#Python3 virtualenv
 [ -s "/usr/local/bin/virtualenvwrapper.sh" ] && source /usr/local/bin/virtualenvwrapper.sh
+
+#FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#TILIX CHECK FOR VTE
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"

@@ -32,6 +32,7 @@ set foldmethod=indent	          " fold based on indent level
 " Finding Files {{{
 set path+=**                      " Search down into sub folders
 set wildignore+=*/node_modules/*  " Ignore node_modules
+set rtp+=~/.fzf
 " }}}
 
 " File Browsing {{{
@@ -49,22 +50,28 @@ if exists('*minpac#init')
   " minpac is loaded.
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
-  "call minpac#add('arcticicestudio/nord-vim')
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-sleuth')
   call minpac#add('sheerun/vim-polyglot')
-  call minpac#add('bluz71/vim-moonfly-colors')
+  call minpac#add('chriskempson/base16-vim')
   call minpac#add('itchyny/lightline.vim')
-  "call minpac#add('fatih/vim-go', { 'do': ':GoInstallBinaries' })
+  call minpac#add('daviesjamie/vim-base16-lightline')
+  call minpac#add('fatih/vim-go', { 'do': ':GoInstallBinaries' })
+  call minpac#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
+  call minpac#add('ap/vim-css-color')
 endif
 " }}}
 
 " Global {{{
 let g:rehash256 = 1
-let g:lightline = { 'colorscheme': 'moonfly' }
+let g:lightline = { 'colorscheme': 'base16' }
 " }}}
 
 " Color {{{
 syntax enable		          " enable syntax processing
-colorscheme moonfly
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+  colorscheme base16-bright
+endif
 " }}}
