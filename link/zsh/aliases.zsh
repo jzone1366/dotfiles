@@ -37,7 +37,6 @@ alias lt='ls *(.m0)' # files (no directories) modified in last day
 alias lnew='ls *(.om[1,3])' # list three newest
 
 ## TMUX STUFF
-#alias takeover="tmux detach -a"
 alias attach="tmux attach -t base || tmux new -s base"
 alias ta='tmux attach -t'
 alias tn='tmux new -s'

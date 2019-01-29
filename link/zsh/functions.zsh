@@ -29,18 +29,6 @@ s() { pwd > ~/.save_dir ; }
 i() { cd "$(cat ~/.save_dir)" ; }
 
 # -------------------------------------------------------------------
-# console function
-# -------------------------------------------------------------------
-function console () {
-  if [[ $# > 0 ]]; then
-    query=$(echo "$*"|tr -s ' ' '|')
-    tail -f /var/log/system.log|grep -i --color=auto -E "$query"
-  else
-    tail -f /var/log/system.log
-  fi
-}
-
-# -------------------------------------------------------------------
 # shell function to define words
 # http://vikros.tumblr.com/post/23750050330/cute-little-function-time
 # -------------------------------------------------------------------
@@ -51,4 +39,13 @@ givedef() {
   else
     curl "dict://dict.org/d:$1"
   fi
+}
+
+# -------------------------------------------------------------------
+# shell function to print the term colors and color numbers
+# -------------------------------------------------------------------
+getTermColors() {
+  for i in {0..255}; do
+    printf "\x1b[38;5;${i}mcolour${i}\x1b[0m\n"
+  done
 }

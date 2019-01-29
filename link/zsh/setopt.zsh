@@ -16,6 +16,7 @@ setopt cdablevarS		# us arguments for directory
 
 # Expansion and globbing
 setopt extendedglob		# treat #, ~, and ^  as part of patterns of filenames
+
 # History
 setopt appendhistory		# Allow multiple terminal sessions to append to one history file
 setopt extendedhistory		# save timestamp and duration of command
